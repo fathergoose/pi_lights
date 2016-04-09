@@ -24,11 +24,11 @@ def charge_time():
     return count
 
 
-def analog_read():
+def read_pot():
     discharge()
     return charge_time()
 
 
-while True:
-    print(analog_read())
-    time.sleep(1)
+#while True:
+#    print(read_pot())
+#    time.sleep(1)
