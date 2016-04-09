@@ -8,7 +8,7 @@ CALIBRATION = 300 # maximum MEASURED value of resistance.read_pot()
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(led_pin, GPIO.OUT)
 pwm_led = GPIO.PWM(led_pin, 500)
-pwm_led.start(100)
+pwm_led.start(0)
 
 def blink(times, speed):
     i = 0
@@ -25,7 +25,7 @@ while True:
     pot = resistance.read_pot()
     duty = pot // 10
     pwm_led.ChangeDutyCycle(duty)
-    time.sleep(1)
+    time.sleep(.1)
     
     # duty_s = input("% Brightness? ")
     # duty = int(duty_s)
